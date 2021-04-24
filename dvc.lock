@@ -16,3 +16,57 @@ stages:
     - path: data/raw/HR-Employee-Attrition.csv
       md5: 699b02f7f57c2d38871d6610b3716b7d
       size: 227974
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/HR-Employee-Attrition.csv
+      md5: 699b02f7f57c2d38871d6610b3716b7d
+      size: 227974
+    - path: src/split_data.py
+      md5: e8daec1d3dddbb4a51a4e087ae7e3ab9
+      size: 1050
+    outs:
+    - path: data/raw/test_hr_employee_attrition.csv
+      md5: 98e92a39f1205c83aaffa9dfe0b6adfc
+      size: 68816
+    - path: data/raw/train_hr_employee_attrition.csv
+      md5: 981ae0306a00d71ad191a588dc6af435
+      size: 159672
+  process_data:
+    cmd: python src/process_data.py --config=params.yaml
+    deps:
+    - path: data/raw/test_hr_employee_attrition.csv
+      md5: 98e92a39f1205c83aaffa9dfe0b6adfc
+      size: 68816
+    - path: data/raw/train_hr_employee_attrition.csv
+      md5: 981ae0306a00d71ad191a588dc6af435
+      size: 159672
+    - path: src/process_data.py
+      md5: 2cab1bdfd60f99629b7406981e2dcdb6
+      size: 3456
+    outs:
+    - path: data/processed/test_hr_employee_attrition.csv
+      md5: ab27d71cf5bedab51bbea1ad3f7531c3
+      size: 91815
+    - path: data/processed/train_hr_employee_attrition.csv
+      md5: 3a58ddc2a8c6dccf605f247a402fabdc
+      size: 213203
+    - path: saved_models/scaler.pkl
+      md5: a804e5852002c885bf1847d81575142b
+      size: 802
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_hr_employee_attrition.csv
+      md5: ab27d71cf5bedab51bbea1ad3f7531c3
+      size: 91815
+    - path: data/processed/train_hr_employee_attrition.csv
+      md5: 3a58ddc2a8c6dccf605f247a402fabdc
+      size: 213203
+    - path: src/train_and_evaluate.py
+      md5: b0675724936ab2219c8fbcc1f1a2ec4b
+      size: 2095
+    outs:
+    - path: saved_models/model.joblib
+      md5: 9b0eb37454d6c977cc1827fa266bd9ba
+      size: 166075
