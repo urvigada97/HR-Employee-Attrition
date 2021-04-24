@@ -64,13 +64,19 @@ stages:
       md5: 3a58ddc2a8c6dccf605f247a402fabdc
       size: 213203
     - path: src/train_and_evaluate.py
-      md5: b0675724936ab2219c8fbcc1f1a2ec4b
-      size: 2095
+      md5: 8e7ff7b806f311b84be73db182aa6b11
+      size: 2591
     params:
       params.yaml:
         estimators.SVC.params.C: 50
         estimators.SVC.params.gamma: 0.01
     outs:
+    - path: report/params.json
+      md5: 663c016f52ef9d2e3abc74492e8f7344
+      size: 37
+    - path: report/scores.json
+      md5: 1a87ccb62c82ad37fa3e77e2178e58f3
+      size: 145
     - path: saved_models/model.joblib
       md5: 9b0eb37454d6c977cc1827fa266bd9ba
       size: 166075
