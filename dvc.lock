@@ -66,6 +66,10 @@ stages:
     - path: src/train_and_evaluate.py
       md5: b0675724936ab2219c8fbcc1f1a2ec4b
       size: 2095
+    params:
+      params.yaml:
+        estimators.SVC.params.C: 50
+        estimators.SVC.params.gamma: 0.01
     outs:
     - path: saved_models/model.joblib
       md5: 9b0eb37454d6c977cc1827fa266bd9ba
