@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/HR-Employee-Attrition.csv
+      md5: f82da769b584928fe24e9f7885ad09d5
+      size: 227977
+    - path: src/get_data.py
+      md5: 2bd7ca9a0a5a9296330192a885b64942
+      size: 669
+    - path: src/load_data.py
+      md5: 23fc497739c99229c6bd38f977636ced
+      size: 594
+    outs:
+    - path: data/raw/HR-Employee-Attrition.csv
+      md5: 699b02f7f57c2d38871d6610b3716b7d
+      size: 227974
