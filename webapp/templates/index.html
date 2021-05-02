@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HR Employee Attrition
+{% endblock title %}
+
+
+{% block custom_css %}
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock custom_css %}
+
+
+{% block body %}
+<!-- nav bar -->
+
+<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">HR Employee Attrition Prediction</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/urvigada97/HR-Employee-Attrition">source code</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <!-- nav bar ends -->
+
+    <div class="container-fluid masthead">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form method="POST">
+                        <!-- Input block-->
+                        <div class="form-group">
+                            <label for="translation">
+                                <blockquote class="blockquote">
+                                    <p class="mb-2">Enter the details as indicated:</p>
+                                </blockquote>
+                            </label>
+                            <textarea class="form-control" name="Age" rows="1"
+                                      placeholder="Age expected range 18.0 to 60.0"></textarea>
+                            <textarea class="form-control" name="DailyRate" rows="1"
+                                      placeholder="Daily Rate expected range 102.0 to 1499.0"></textarea>
+                            <textarea class="form-control" name="DistanceFromHome" rows="1"
+                                      placeholder="Distance From Home expected range 1.0 to 29.0"></textarea>
+                            <label for="Education">Education:</label>
+                            <select name="Education" id="Education" class="form-control" rows="1">
+                                <option value=1>Below College</option>
+                                <option value=2>College</option>
+                                <option value=3>Bachelor</option>
+                                <option value=4>Master</option>
+                                <option value=5>Doctor</option>
+                            </select>
+                            <textarea class="form-control" name="EmployeeCount" rows="1"
+                                      placeholder="Employee Count expected range 0.012 to 0.611"></textarea>
+                            <label for="EnvironmentSatisfaction">Environment Satisfaction:</label>
+                            <select name="EnvironmentSatisfaction" id="EnvironmentSatisfaction" class="form-control" rows="1">
+                                <option value=1>Low</option>
+                                <option value=2>Medium</option>
+                                <option value=3>High</option>
+                                <option value=4>Very High</option>
+                            </select>
+                            <textarea class="form-control" name="HourlyRate" rows="1"
+                                      placeholder="Hourly Rate expected range 30.0 to 100.0"></textarea>
+                            <label for="JobInvolvement">Job Involvement:</label>
+                            <select name="JobInvolvement" id="JobInvolvement" class="form-control" rows="1">
+                                <option value=1>Low</option>
+                                <option value=2>Medium</option>
+                                <option value=3>High</option>
+                                <option value=4>Very High</option>
+                            </select>
+                            <textarea class="form-control" name="JobLevel" rows="1"
+                                      placeholder="Job Level expected range 1.0 to 5.0"></textarea>
+                            <label for="JobSatisfaction">Job Satisfaction:</label>
+                            <select name="JobSatisfaction" id="JobSatisfaction" class="form-control" rows="1">
+                                <option value=1>Low</option>
+                                <option value=2>Medium</option>
+                                <option value=3>High</option>
+                                <option value=4>Very High</option>
+                            </select>
+                            <textarea class="form-control" name="MonthlyIncome" rows="1"
+                                      placeholder="Monthly Income expected range 1009.0 to 19999.0"></textarea>
+                            <textarea class="form-control" name="MonthlyRate" rows="1"
+                                      placeholder="Monthly Rate expected range 2094.0 to 26999.0"></textarea>
+                            <textarea class="form-control" name="NumCompaniesWorked" rows="1"
+                                      placeholder="Number of Companies Worked expected range 0.0 to 9.0"></textarea>
+                            <textarea class="form-control" name="PercentSalaryHike" rows="1"
+                                      placeholder="Percent Salary Hike expected range 11.0 to 25.0"></textarea>
+                            <label for="PerformanceRating">Performance Rating:</label>
+                            <select name="PerformanceRating" id="PerformanceRating" class="form-control" rows="1">
+                                <option value=1>Low</option>
+                                <option value=2>Good</option>
+                                <option value=3>Excellent</option>
+                                <option value=4>Outstanding</option>
+                            </select>
+                            <label for="RelationshipSatisfaction">Relationship Satisfaction:</label>
+                            <select name="RelationshipSatisfaction" id="RelationshipSatisfaction" class="form-control" rows="1">
+                                <option value=1>Low</option>
+                                <option value=2>Medium</option>
+                                <option value=3>High</option>
+                                <option value=4>Very High</option>
+                            </select>
+                            <textarea class="form-control" name="StockOptionLevel" rows="1"
+                                      placeholder="Stock Option Level expected range 0.0 to 3.0"></textarea>
+                            <textarea class="form-control" name="TotalWorkingYears" rows="1"
+                                      placeholder="Total Working Years expected range 0.0 to 40.0"></textarea>
+                            <textarea class="form-control" name="TrainingTimesLastYear" rows="1"
+                                      placeholder="Training Times in Last Year expected range 0.0 to 6.0"></textarea>
+                            <label for="WorkLifeBalance">Work-Life Balance:</label>
+                            <select name="WorkLifeBalance" id="WorkLifeBalance" class="form-control" rows="1">
+                                <option value=1>Bad</option>
+                                <option value=2>Good</option>
+                                <option value=3>Better</option>
+                                <option value=4>Best</option>
+                            </select>
+                            <textarea class="form-control" name="YearsAtCompany" rows="1"
+                                      placeholder="Years at Company expected range 0.0 to 40.0"></textarea>
+                            <textarea class="form-control" name="YearsInCurrentRole" rows="1"
+                                      placeholder="Years in current role expected range 0.0 to 18.0"></textarea>
+                            <textarea class="form-control" name="YearsSinceLastPromotion" rows="1"
+                                      placeholder="Years since last promotion expected range 0.0 to 15.0"></textarea>
+                            <textarea class="form-control" name="YearsWithCurrManager" rows="1"
+                                      placeholder="Years with current manager expected range 0.0 to 17.0"></textarea>
+                            <label for="BusinessTravel">Business Travel:</label>
+                            <select name="BusinessTravel" id="BusinessTravel" class="form-control" rows="1">
+                                <option value="Travel_Rarely">Travel Rarely</option>
+                                <option value="Travel_Frequently">Travel Frequently</option>
+                                <option value="Non-Travel">Non Travel</option>
+                            </select>
+                            <label for="Department">Department:</label>
+                            <select name="Department" id="Department" class="form-control" rows="1">
+                                <option value="Sales">Sales</option>
+                                <option value="Research_&_Development">Research & Development</option>
+                                <option value="Human Resources">Human_Resources</option>
+                            </select>
+                            <label for="EducationField">Education Field:</label>
+                            <select name="EducationField" id="EducationField" class="form-control" rows="1">
+                                <option value="Life_Sciences">Life Sciences</option>
+                                <option value="Medical">Medical</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Technical_Degree">Technical Degree</option>
+                                <option value="Human Resources">Human_Resources</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="Gender_Male">Gender:</label>
+                            <select name="Gender_Male" id="Gender_Male" class="form-control" rows="1">
+                                <option value=0>Female</option>
+                                <option value=1>Male</option>
+                            </select>
+                            <label for="JobRole">Job Role:</label>
+                            <select name="JobRole" id="JobRole" class="form-control" rows="1">
+                                <option value="Sales_Executive">Sales Executive</option>
+                                <option value="Research_Scientist">Research Scientist</option>
+                                <option value="Laboratory_Technician">Laboratory Technician</option>
+                                <option value="Manufacturing_Director">Manufacturing Director</option>
+                                <option value="Healthcare_Representative">Healthcare Representative</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Sales_Representative">Sales Representative</option>
+                                <option value="Research_Director">Research Director</option>
+                                <option value="Human_Resources">Human Resources</option>
+                            </select>
+                            <label for="MaritalStatus">Marital Status:</label>
+                            <select name="MaritalStatus" id="MaritalStatus" class="form-control" rows="1">
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Divorced">Divorced</option>
+                            </select>
+                            <label for="OverTime_Yes">Over Time:</label>
+                            <select name="OverTime_Yes" id="OverTime_Yes" class="form-control" rows="1">
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+
+                        <!-- Select output language here. -->
+                        <div class="form-group">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Predict</button>
+                        </br>
+                        </br>
+                    </form>
+                    <!-- Translated text returned by the Translate API is rendered here. -->
+                </div>
+                <div class="col">
+                    <form>
+                        <div class="form-group">
+                            <label for="translation-result">
+
+                                <blockquote class="blockquote">
+                                    <p class="mb-2">Prediction:</p>
+                                </blockquote>
+
+                            </label>
+                            <textarea readonly class="form-control" id="exTextarea" rows="5">{{ response }}</textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endblock body %}
+
+        {% block custom_js %}
+        <!-- Custom JS -->
+        <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+        {% endblock custom_js %}

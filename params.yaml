@@ -15,6 +15,50 @@ preprocess:
   columns_to_drop: ['EmployeeNumber', 'EmployeeCount', 'StandardHours', 'Over18']
   train_path: data/processed/train_hr_employee_attrition.csv
   test_path: data/processed/test_hr_employee_attrition.csv
+  numerical_features: [ 'Age', 'DailyRate', 'DistanceFromHome', 'Education', 'EnvironmentSatisfaction', 'HourlyRate',
+      'JobInvolvement', 'JobLevel', 'JobSatisfaction', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+      'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel', 'TotalWorkingYears',
+      'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+      'YearsWithCurrManager' ]
+  numerical_features1: [ 'Age', 'DailyRate', 'DistanceFromHome', 'Education', 'EnvironmentSatisfaction', 'HourlyRate',
+      'JobInvolvement', 'JobLevel', 'JobSatisfaction', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+      'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel', 'TotalWorkingYears',
+      'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+      'YearsWithCurrManager', 'Attrition', 'BusinessTravel_Travel_Frequently', 'BusinessTravel_Travel_Rarely',
+      'Department_Research_&_Development', 'Department_Sales', 'EducationField_Life_Sciences', 'EducationField_Marketing',
+      'EducationField_Medical', 'EducationField_Other', 'EducationField_Technical_Degree', 'Gender_Male',
+      'JobRole_Human_Resources', 'JobRole_Laboratory_Technician', 'JobRole_Manager', 'JobRole_Manufacturing_Director',
+      'JobRole_Research_Director', 'JobRole_Research_Scientist', 'JobRole_Sales_Executive', 'JobRole_Sales_Representative',
+      'MaritalStatus_Married', 'MaritalStatus_Single', 'OverTime_Yes' ]
+  discrete_feature: ['Education', 'EnvironmentSatisfaction', 'JobInvolvement', 'JobLevel', 'JobSatisfaction',
+      'NumCompaniesWorked', 'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel',
+      'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager']
+  discrete_feature1: [ 'Education', 'EnvironmentSatisfaction', 'JobInvolvement', 'JobLevel', 'JobSatisfaction',
+      'NumCompaniesWorked', 'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel',
+      'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager',
+      'Attrition', 'BusinessTravel_Travel_Frequently', 'BusinessTravel_Travel_Rarely', 'Department_Research_&_Development',
+      'Department_Sales', 'EducationField_Life_Sciences', 'EducationField_Marketing', 'EducationField_Medical',
+      'EducationField_Other', 'EducationField_Technical_Degree', 'Gender_Male', 'JobRole_Human_Resources',
+      'JobRole_Laboratory_Technician', 'JobRole_Manager', 'JobRole_Manufacturing_Director', 'JobRole_Research_Director',
+      'JobRole_Research_Scientist', 'JobRole_Sales_Executive', 'JobRole_Sales_Representative', 'MaritalStatus_Married',
+      'MaritalStatus_Single', 'OverTime_Yes' ]
+  continuous_feature: ['Age', 'DailyRate', 'DistanceFromHome', 'HourlyRate', 'MonthlyIncome', 'MonthlyRate',
+                       'TotalWorkingYears', 'YearsAtCompany']
+  continuous_feature1: ['Age', 'DailyRate', 'DistanceFromHome', 'HourlyRate', 'MonthlyIncome', 'MonthlyRate',
+                        'TotalWorkingYears', 'YearsAtCompany']
+  categorical_features: ['Attrition', 'BusinessTravel', 'Department', 'EducationField', 'Gender', 'JobRole',
+                         'MaritalStatus', 'OverTime']
+  feature_not_to_scale: [ 'Education', 'EnvironmentSatisfaction', 'JobInvolvement', 'JobLevel', 'JobSatisfaction',
+      'NumCompaniesWorked', 'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction', 'StockOptionLevel',
+      'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager',
+      'Attrition', 'BusinessTravel_Travel_Frequently', 'BusinessTravel_Travel_Rarely',
+      'Department_Research_&_Development', 'Department_Sales', 'EducationField_Life_Sciences',
+      'EducationField_Marketing', 'EducationField_Medical', 'EducationField_Other', 'EducationField_Technical_Degree',
+      'Gender_Male', 'JobRole_Human_Resources', 'JobRole_Laboratory_Technician', 'JobRole_Manager',
+      'JobRole_Manufacturing_Director', 'JobRole_Research_Director', 'JobRole_Research_Scientist',
+      'JobRole_Sales_Executive', 'JobRole_Sales_Representative', 'MaritalStatus_Married', 'MaritalStatus_Single',
+      'OverTime_Yes' ]
+
 
 split_data:
   train_path: data/raw/train_hr_employee_attrition.csv

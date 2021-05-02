@@ -1,0 +1,178 @@
+{
+  "Age": {
+    "min": 18.0,
+    "max": 60.0
+  },
+  "DailyRate": {
+    "min": 102.0,
+    "max": 1499.0
+  },
+  "DistanceFromHome": {
+    "min": 1.0,
+    "max": 29.0
+  },
+  "Education": {
+    "min": 1.0,
+    "max": 5.0
+  },
+  "EnvironmentSatisfaction": {
+    "min": 1.0,
+    "max": 4.0
+  },
+  "HourlyRate": {
+    "min": 30.0,
+    "max": 100.0
+  },
+  "JobInvolvement": {
+    "min": 1.0,
+    "max": 4.0
+  },
+  "JobLevel": {
+    "min": 1.0,
+    "max": 5.0
+  },
+  "JobSatisfaction": {
+    "min": 1.0,
+    "max": 4.0
+  },
+  "MonthlyIncome": {
+    "min": 1009.0,
+    "max": 19999.0
+  },
+  "MonthlyRate": {
+    "min": 2094.0,
+    "max": 26999.0
+  },
+  "NumCompaniesWorked": {
+    "min": 0.0,
+    "max": 9.0
+  },
+  "PercentSalaryHike": {
+    "min": 11.0,
+    "max": 25.0
+  },
+  "PerformanceRating": {
+    "min": 3.0,
+    "max": 4.0
+  },
+  "RelationshipSatisfaction": {
+    "min": 1.0,
+    "max": 4.0
+  },
+  "StockOptionLevel": {
+    "min": 0.0,
+    "max": 3.0
+  },
+  "TotalWorkingYears": {
+    "min": 0.0,
+    "max": 40.0
+  },
+  "TrainingTimesLastYear": {
+    "min": 0.0,
+    "max": 6.0
+  },
+  "WorkLifeBalance": {
+    "min": 1.0,
+    "max": 4.0
+  },
+  "YearsAtCompany": {
+    "min": 0.0,
+    "max": 40.0
+  },
+  "YearsInCurrentRole": {
+    "min": 0.0,
+    "max": 18.0
+  },
+  "YearsSinceLastPromotion": {
+    "min": 0.0,
+    "max": 15.0
+  },
+  "YearsWithCurrManager": {
+    "min": 0.0,
+    "max": 17.0
+  },
+  "BusinessTravel_Travel_Frequently": {
+    "min": 0,
+    "max": 1
+  },
+  "BusinessTravel_Travel_Rarely": {
+    "min": 0,
+    "max": 1
+  },
+  "Department_Research_&_Development": {
+    "min": 0,
+    "max": 1
+  },
+  "Department_Sales": {
+    "min": 0,
+    "max": 1
+  },
+  "EducationField_Life_Sciences": {
+    "min": 0,
+    "max": 1
+  },
+  "EducationField_Marketing": {
+    "min": 0,
+    "max": 1
+  },
+  "EducationField_Medical": {
+    "min": 0,
+    "max": 1
+  },
+  "EducationField_Other": {
+    "min": 0,
+    "max": 1
+  },
+  "EducationField_Technical_Degree": {
+    "min": 0,
+    "max": 1
+  },
+  "Gender_Male": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Human_Resources": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Laboratory_Technician": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Manager": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Manufacturing_Director": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Research_Director": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Research_Scientist": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Sales_Executive": {
+    "min": 0,
+    "max": 1
+  },
+  "JobRole_Sales_Representative": {
+    "min": 0,
+    "max": 1
+  },
+  "MaritalStatus_Married": {
+    "min": 0,
+    "max": 1
+  },
+  "MaritalStatus_Single": {
+    "min": 0,
+    "max": 1
+  },
+  "OverTime_Yes": {
+    "min": 0,
+    "max": 1
+  }
+}

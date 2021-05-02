@@ -7,7 +7,10 @@ dirs = [
     "saved_models",
     "src",
     "report",
-    "data_given"
+    "data_given",
+    "tests",
+    os.path.join("prediction_service", "model"),
+    os.path.join("webapp", "static", "css"),
 ]
 
 for dir_ in dirs:
@@ -19,7 +22,13 @@ files = [
     "dvc.yaml",
     "params.yaml",
     ".gitignore",
-    os.path.join("src", "__init__.py")
+    "tox.ini",
+    "requirements.txt",
+    "setup.py",
+    os.path.join("src", "__init__.py"),
+    "app.py",
+    os.path.join("prediction_service", "__init__.py"),
+    os.path.join("prediction_service", "prediction.py")
 ]
 
 for file_ in files:
