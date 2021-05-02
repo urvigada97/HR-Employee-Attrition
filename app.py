@@ -21,8 +21,8 @@ def read_params(config_path):
 
 def predict(data):
     config = read_params(params_path)
-    model_dir = config["model_dir"]
-    scale_model_path = os.path.join(model_dir, "scaler.joblib")
+    # model_dir = config["webapp_model_dir"]
+    scale_model_path = config["webapp_scaler_model_dir"] # os.path.join(model_dir, "scaler.joblib")
     scaler = joblib.load(scale_model_path)
     data = pd.DataFrame(data, index=[0])
     # print(pd.DataFrame(data, index=[0]))

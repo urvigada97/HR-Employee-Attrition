@@ -79,6 +79,7 @@ reports:
   scores: report/scores.json
 
 webapp_model_dir: prediction_service/model/model.joblib
+webapp_scaler_model_dir: prediction_service/model/scaler.joblib
 
 mlflow_config:
   artifacts_dir: artifacts
