@@ -30,7 +30,8 @@ files = [
     "app.py",
     os.path.join("prediction_service", "__init__.py"),
     os.path.join("prediction_service", "prediction.py"),
-    os.path.join("workflows", "ci-cd.yaml")
+    os.path.join("workflows", "ci-cd.yaml"),
+    "Procfile"
 ]
 
 for file_ in files:
