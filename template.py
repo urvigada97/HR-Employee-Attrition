@@ -11,6 +11,7 @@ dirs = [
     "tests",
     os.path.join("prediction_service", "model"),
     os.path.join("webapp", "static", "css"),
+    os.path.join(".github", "workflows")
 ]
 
 for dir_ in dirs:
@@ -28,7 +29,8 @@ files = [
     os.path.join("src", "__init__.py"),
     "app.py",
     os.path.join("prediction_service", "__init__.py"),
-    os.path.join("prediction_service", "prediction.py")
+    os.path.join("prediction_service", "prediction.py"),
+    os.path.join("workflows", "ci-cd.yaml")
 ]
 
 for file_ in files:
